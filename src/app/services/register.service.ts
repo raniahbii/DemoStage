@@ -17,4 +17,9 @@ export class RegisterService {
   AjouterUser(user :User):Observable<User>{
       return this.http.post<User>("http://localhost:8081/signIn",user,httpOptions);
   }
+
+  updatetUser(user:User) : Observable<User>
+  {
+  return this.http.put<User>("http://localhost:8081/update",user, httpOptions);
+  }
 }

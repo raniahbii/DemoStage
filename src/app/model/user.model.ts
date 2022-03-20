@@ -3,6 +3,8 @@ export class User{
  firstname : string ; 
  lastname : string ; 
 matricule : number;
+password?:string;
+
 
 
     constructor(email ?: string , firstname ?: string , lastname ?: string , matricule ?: number ){
@@ -12,6 +14,7 @@ matricule : number;
         this.matricule=matricule || 0;
       
     }
+    
 
     
 }

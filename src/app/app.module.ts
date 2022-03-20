@@ -7,7 +7,8 @@ import{HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
-import { SpinnerComponent } from './spinner/spinner.component';
+
+import { ErreurComponent } from './erreur/erreur.component';
 
 
 
@@ -16,7 +17,8 @@ import { SpinnerComponent } from './spinner/spinner.component';
     AppComponent,
     RegisterComponent,
     ResetPasswordComponent,
-    SpinnerComponent
+  
+    ErreurComponent
   ],
   imports: [
     BrowserModule,

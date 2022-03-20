@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { RouterModule ,Routes } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
-import { SpinnerComponent } from './spinner/spinner.component';
+
+import { ErreurComponent } from './erreur/erreur.component';
 
 const ROUTES : Routes = [
   {path:'', component : RegisterComponent },
-  {path:'nvmdp', component : ResetPasswordComponent },
-  {path:'resetpw/:id' , component: SpinnerComponent}
+  {path:'resetpw/:id', component : ResetPasswordComponent },
+  {path:'echec', component :ErreurComponent }
 
 ]
 
