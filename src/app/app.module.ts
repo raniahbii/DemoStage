@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 import { ErreurComponent } from './erreur/erreur.component';
+import { ForgotpwdComponent } from './forgotpwd/forgotpwd.component';
 
 
 
@@ -18,7 +19,8 @@ import { ErreurComponent } from './erreur/erreur.component';
     RegisterComponent,
     ResetPasswordComponent,
   
-    ErreurComponent
+    ErreurComponent,
+       ForgotpwdComponent
   ],
   imports: [
     BrowserModule,

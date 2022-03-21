@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../model/user.model';
 import { RegisterService } from '../services/register.service';
@@ -13,16 +14,19 @@ export class ResetPasswordComponent implements OnInit {
   id !: string ; 
   token : string = this.route.snapshot.params['id'] ;
  // newpassword :any ; 
-  //confirmnewpassword:any;
+ public confirmpwd=true;
+ confirmpassword !: any ; 
  //newuser = new User();
  public user !: User ;
  password !: string;
+ message !: string ; 
 
   //user !:User
   constructor(private route : ActivatedRoute,
     private reserpwser : ResetpwService,
      private router : Router,
      private registerSer : RegisterService) { }
+
 
   ngOnInit(): void {
     this.reserpwser.getVerfifPwd(this.route.snapshot.params['id']).subscribe((data:User)=>{
@@ -38,6 +42,7 @@ export class ResetPasswordComponent implements OnInit {
     
       
     });
+    
     
    //this.reserpwser.userr.password=this.newuser.password;
 
@@ -58,10 +63,20 @@ export class ResetPasswordComponent implements OnInit {
   }
 UpdatePassword(){
 
-  //this.user=this.newuser;
+ 
   this.user.password=this.password;
   return this.registerSer.updatetUser(this.user).subscribe(data=>console.log(data));
 }
+ checkPasswordMatch() {
+   console.log(this.password);
+   console.log(this.confirmpassword);
+if (this.password === this.confirmpassword){
+  return  this.message = "Passwords match";
+
+}
+else return this.message = "Passwords dont match";
+}
+
 
 }
 

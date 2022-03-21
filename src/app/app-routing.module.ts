@@ -5,11 +5,13 @@ import { RegisterComponent } from './register/register.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 import { ErreurComponent } from './erreur/erreur.component';
+import { ForgotpwdComponent } from './forgotpwd/forgotpwd.component';
 
 const ROUTES : Routes = [
   {path:'', component : RegisterComponent },
   {path:'resetpw/:id', component : ResetPasswordComponent },
-  {path:'echec', component :ErreurComponent }
+  {path:'echec', component :ErreurComponent },
+  {path:'forgotpwd', component :ForgotpwdComponent}
 
 ]
 

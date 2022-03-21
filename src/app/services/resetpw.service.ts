@@ -11,6 +11,8 @@ export class ResetpwService {
   userr !: User ; 
   //usernew !: User;
   apiURL="http://localhost:8081";
+  geturl = "http://localhost:8081/getbymail";
+  
 
   constructor(private http : HttpClient) { }
   getVerfifPwd(id: string):Observable<any>  {
@@ -18,6 +20,10 @@ export class ResetpwService {
    
     return this.http.get(url);
     }
+  
+    getMail(email :string): Observable<any>{
+      return this.http.get("http://localhost:8081/getbymail/"+email);
+      }
   
 
 }
